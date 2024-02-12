@@ -24,9 +24,10 @@ $(document).ready(function() {
 
         let letter = event.which;
         console.log(event.which);
-        if (letter == wordGame[counter]) {
+        console.log(wordGame.charCodeAt(counter)-32);
+        if (letter == wordGame.charCodeAt(counter)-32) {
             counter++;
-            $("#container").children()[counter].text(wordGame(counter-1));
+            $("#container").children().eq(counter).text(wordGame[counter-1]);
         }
     })
 })
