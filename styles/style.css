@@ -1,0 +1,34 @@
+#container {
+    border: 1px solid black;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.letter {
+    border: 1px solid red;
+    height: 50px;
+    width: 10%;
+    border-radius: 5px;
+    background-color: lightgray;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 45px;
+    text-shadow: 2px 2px black;
+
+}
+
+button {
+    height: 30px;
+    width: 90px;
+    border-radius: 5px;
+    background-color: lightblue;
+    border: 1px solid black;
+}
+
+button:hover {
+    opacity: 80%;
+}
