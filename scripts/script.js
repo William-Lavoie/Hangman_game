@@ -27,7 +27,9 @@ $(document).ready(function() {
         console.log(wordGame.charCodeAt(counter)-32);
         if (letter == wordGame.charCodeAt(counter)-32) {
             counter++;
-            $("#container").children().eq(counter).text(wordGame[counter-1]);
+            $("#container").children().eq(counter-1).text(wordGame[counter-1]);
         }
+
+
     })
 })
