@@ -24,7 +24,7 @@ $(document).ready(function() {
     
     $(document).on("keydown", function(event) {
 
-        if (! gameIsOver && mistakes < 5) {
+        if (!gameIsOver && mistakes < 5) {
 
             let letter = event.which;
             let foundLetter = false;
@@ -48,6 +48,24 @@ $(document).ready(function() {
                 }
 
                 
+            }
+
+            else {
+
+                let gameOver = true;
+
+                for (let i = 0; i < wordGame.length; i++) {
+
+                    if ($("#container").children().eq(i).html() == "") {
+                        gameOver = false;
+                    } 
+                }
+
+                if (gameOver) {
+                    gameIsOver = true;
+                    alert("Congratulations! You have won");
+                }
+
             }
 
            
