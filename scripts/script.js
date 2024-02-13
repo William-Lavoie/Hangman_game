@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
-    const WORDS = ["word" , "a", "ab"];
+    const WORDS = ["word" , "hello", "ab"];
     let wordGame = "";
-    let counter = 0;
+    let gameIsOver = false;
     let mistakes = 0;
 
     $("#new-game").click(function() {
@@ -11,6 +11,8 @@ $(document).ready(function() {
         counter = 0;
         mistakes = 0;
         $("#container").html("");
+        $("#pictures").html("");
+
 
         for (let i = 0; i < wordGame.length ; i++) {
             let newElement = $("<div></div>");
@@ -22,13 +24,41 @@ $(document).ready(function() {
     
     $(document).on("keydown", function(event) {
 
-        let letter = event.which;
-        console.log(event.which);
-        console.log(wordGame.charCodeAt(counter)-32);
-        if (letter == wordGame.charCodeAt(counter)-32) {
-            counter++;
-            $("#container").children().eq(counter-1).text(wordGame[counter-1]);
+        if (! gameIsOver && mistakes < 5) {
+
+            let letter = event.which;
+            let foundLetter = false;
+
+            for (let i = 0; i < wordGame.length; i++) {
+
+                if (letter == wordGame.charCodeAt(i)-32) {
+                    foundLetter = true;
+                    $("#container").children().eq(i).text(wordGame[i]);
+                }
+            }
+
+            if (!foundLetter) {
+
+                mistakes++;
+                let newPicture = $("<img src='../images/x.jpeg' alt='red x picture' width: 100px>");
+                $("#pictures").append(newPicture);
+
+                if (mistakes == 5) {
+                    alert("You lost, the word was : " + wordGame);
+                }
+
+                
+            }
+
+           
+       
+            
         }
+
+        else {
+            alert("The game is over, please start a new one.");
+        }
+       
 
 
     })

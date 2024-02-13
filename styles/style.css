@@ -32,3 +32,14 @@ button {
 button:hover {
     opacity: 80%;
 }
+
+#pictures {
+    width: 600px;
+    height: 100px;
+    padding: 10px;
+    display: flex;
+}
+
+img {
+    margin: 10px;
+}
