@@ -13,6 +13,8 @@ $(document).ready(function() {
         gameIsOver = false;
         $("#container").html("");
         $("#pictures").html("");
+        $("#letter-containers").html("");
+
         
 
         for (let i = 0; i < wordGame.length ; i++) {
@@ -44,6 +46,9 @@ $(document).ready(function() {
                 let newPicture = $("<img src='../images/x.jpeg' alt='red x picture'>");
                 $("#pictures").append(newPicture);
 
+                let wrongLetter = "<div class='wrong-letters'>" + String.fromCharCode(letter+32) + "</div>";
+                 $("#letter-containers").append(wrongLetter);
+
                 if (mistakes == 5) {
                     alert("You lost, the word was : " + wordGame);
                 }
@@ -68,10 +73,7 @@ $(document).ready(function() {
                 }
 
             }
-
-           
-       
-            
+   
         }
 
         else {
@@ -82,3 +84,4 @@ $(document).ready(function() {
 
     })
 })
+
