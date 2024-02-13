@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    const WORDS = ["word" , "hello", "ab"];
+    const WORDS = ["word" , "hello", "programming", "javascript", "potato", "boat", "anchor", "development", "intriguing", "shore", "seashell"];
     let wordGame = "";
     let gameIsOver = false;
     let mistakes = 0;
@@ -10,9 +10,10 @@ $(document).ready(function() {
         wordGame = WORDS[random];
         counter = 0;
         mistakes = 0;
+        gameIsOver = false;
         $("#container").html("");
         $("#pictures").html("");
-
+        
 
         for (let i = 0; i < wordGame.length ; i++) {
             let newElement = $("<div></div>");
@@ -40,7 +41,7 @@ $(document).ready(function() {
             if (!foundLetter) {
 
                 mistakes++;
-                let newPicture = $("<img src='../images/x.jpeg' alt='red x picture' width: 100px>");
+                let newPicture = $("<img src='../images/x.jpeg' alt='red x picture'>");
                 $("#pictures").append(newPicture);
 
                 if (mistakes == 5) {
