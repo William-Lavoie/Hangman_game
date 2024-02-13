@@ -80,7 +80,7 @@ button:hover {
     display: flex;
 }
 
-img {
+.wrong {
     height: 100px;
     width: 80px;
     margin: 10px;
@@ -104,4 +104,11 @@ img {
 
 p {
     padding: 10px;
+}
+
+.div-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

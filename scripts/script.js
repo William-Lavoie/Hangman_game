@@ -43,7 +43,7 @@ $(document).ready(function() {
             if (!foundLetter) {
 
                 mistakes++;
-                let newPicture = $("<img src='../images/x.jpeg' alt='red x picture'>");
+                let newPicture = $("<img src='../images/x.jpeg' class='wrong' alt='red x picture'>");
                 $("#pictures").append(newPicture);
 
                 let wrongLetter = "<div class='wrong-letters'>" + String.fromCharCode(letter+32) + "</div>";
