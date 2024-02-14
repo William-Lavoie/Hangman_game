@@ -61,9 +61,6 @@ $(document).ready(function() {
 
                 mistakes++;
                 wrongLetters.push(letter);
-                
-                let newPicture = $("<img src='../images/x.jpeg' class='wrong' alt='red x picture'>");
-                $("#pictures").append(newPicture);
 
                 let wrongLetter = "<div class='wrong-letters'>" + String.fromCharCode(letter+32) + "</div>";
                  $("#letter-containers").append(wrongLetter);

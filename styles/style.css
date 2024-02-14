@@ -80,12 +80,6 @@ button:active {
     opacity: 60%;
 }
 
-#pictures {
- 
-    padding: 10px;
-    display: flex;
-}
-
 .wrong {
     height: 100px;
     width: 80px;
