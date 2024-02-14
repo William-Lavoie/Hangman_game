@@ -4,15 +4,27 @@ $(document).ready(function() {
     let wordGame = "";
     let gameIsOver = false;
     let mistakes = 0;
+    let wrongLetters = [];
 
     function isALettter(ascii_code) {
 
         return (ascii_code >= 65 && ascii_code < 90);
     }
 
+    function letterAlreadyUsed(letter) {
+        for (let i = 0; i < wrongLetters.length; i++) {
+            if (wrongLetters[i] == letter) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+ 
     $("#new-game").click(function() {
         let random = Math.floor(Math.random()*WORDS.length );
         wordGame = WORDS[random];
+        wrongLetters = [];
         counter = 0;
         mistakes = 0;
         gameIsOver = false;
@@ -37,7 +49,6 @@ $(document).ready(function() {
             let letter = event.which;
             let foundLetter = false;
 
-            console.log(letter);
             for (let i = 0; i < wordGame.length; i++) {
 
                 if (letter == wordGame.charCodeAt(i)-32) {
@@ -46,9 +57,11 @@ $(document).ready(function() {
                 }
             }
 
-            if (!foundLetter && isALettter(letter)) {
+            if (!foundLetter && isALettter(letter) && !letterAlreadyUsed(letter)) {
 
                 mistakes++;
+                wrongLetters.push(letter);
+                
                 let newPicture = $("<img src='../images/x.jpeg' class='wrong' alt='red x picture'>");
                 $("#pictures").append(newPicture);
 

@@ -6,6 +6,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    background-image: linear-gradient(rgb(132, 132, 232), rgb(90, 218, 205), rgb(33, 229, 164));
     margin: 0;
 }
 
@@ -17,6 +18,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    z-index: 1;
 }
 
 #title {
