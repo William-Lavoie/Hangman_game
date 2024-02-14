@@ -21,7 +21,7 @@ body {
 
 #title {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 30px;
+    font-size: 150%;
     font-weight: bold;
     text-shadow: white 2px 2px;
     padding: 10px;
@@ -72,6 +72,10 @@ button {
 
 button:hover {
     opacity: 80%;
+}
+
+button:active {
+    opacity: 60%;
 }
 
 #pictures {

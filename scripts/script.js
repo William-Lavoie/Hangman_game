@@ -5,6 +5,11 @@ $(document).ready(function() {
     let gameIsOver = false;
     let mistakes = 0;
 
+    function isALettter(ascii_code) {
+
+        return (ascii_code >= 65 && ascii_code < 90);
+    }
+
     $("#new-game").click(function() {
         let random = Math.floor(Math.random()*WORDS.length );
         wordGame = WORDS[random];
@@ -32,6 +37,7 @@ $(document).ready(function() {
             let letter = event.which;
             let foundLetter = false;
 
+            console.log(letter);
             for (let i = 0; i < wordGame.length; i++) {
 
                 if (letter == wordGame.charCodeAt(i)-32) {
@@ -40,7 +46,7 @@ $(document).ready(function() {
                 }
             }
 
-            if (!foundLetter) {
+            if (!foundLetter && isALettter(letter)) {
 
                 mistakes++;
                 let newPicture = $("<img src='../images/x.jpeg' class='wrong' alt='red x picture'>");
