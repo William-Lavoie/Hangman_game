@@ -44,7 +44,7 @@ $(document).ready(function() {
     
     $(document).on("keydown", function(event) {
 
-        if (!gameIsOver && mistakes < 5) {
+        if (!gameIsOver && mistakes < 5 && wordGame != "") {
 
             let letter = event.which;
             let foundLetter = false;
@@ -92,12 +92,9 @@ $(document).ready(function() {
    
         }
 
-        else {
+        else if (wordGame != "") {
             alert("The game is over, please start a new one.");
         }
-       
-
-
     })
 })
 
