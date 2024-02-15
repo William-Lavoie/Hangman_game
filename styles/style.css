@@ -58,7 +58,7 @@ body {
 }
 
 button {
-    height: 5%;
+    height: 50px;
     width: 20%;
     border-radius: 5px;
     background-color: lightblue;
@@ -66,7 +66,7 @@ button {
     font-size: 20px;
     margin: 10px;
     position: relative;
-    bottom: 20%;
+    bottom: 80px;
 }
 
 button:hover {
@@ -114,4 +114,36 @@ p {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
 }
+
+#difficulty-level {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+}
+
+#easy, #medium, #hard {
+    width: 150px;
+    position: relative;
+    right: 50px;
+}
+
+#easy {
+    background-color: green;
+    color: white;
+    text-shadow: black 1px 1px ;
+}
+
+#medium {
+    background-color: yellow;
+    text-shadow: white 1px 1px;
+}
+
+#hard {
+    background-color: red;
+    color: white;
+    text-shadow: black 1px 1px;
+}
+

@@ -5,10 +5,12 @@ $(document).ready(function() {
     let gameIsOver = false;
     let mistakes = 0;
     let wrongLetters = [];
+    let mistakesAllowed = 10;
+    
 
     function isALettter(ascii_code) {
 
-        return (ascii_code >= 65 && ascii_code < 90);
+        return (ascii_code >= 65 && ascii_code <= 90);
     }
 
     function letterAlreadyUsed(letter) {
@@ -44,28 +46,31 @@ $(document).ready(function() {
     
     $(document).on("keydown", function(event) {
 
-        if (!gameIsOver && mistakes < 5 && wordGame != "") {
+        if (!gameIsOver && mistakes < mistakesAllowed && wordGame != "") {
 
             let letter = event.which;
             let foundLetter = false;
 
+            console.log(event.key);
             for (let i = 0; i < wordGame.length; i++) {
 
                 if (letter == wordGame.charCodeAt(i)-32) {
+                   
                     foundLetter = true;
                     $("#container").children().eq(i).text(wordGame[i]);
+                    
                 }
             }
 
             if (!foundLetter && isALettter(letter) && !letterAlreadyUsed(letter)) {
-
+               
                 mistakes++;
                 wrongLetters.push(letter);
 
                 let wrongLetter = "<div class='wrong-letters'>" + String.fromCharCode(letter+32) + "</div>";
                  $("#letter-containers").append(wrongLetter);
 
-                if (mistakes == 5) {
+                if (mistakes >= mistakesAllowed) {
                     alert("You lost, the word was : " + wordGame);
                 }
 
@@ -96,5 +101,19 @@ $(document).ready(function() {
             alert("The game is over, please start a new one.");
         }
     })
+
+
+    $("#easy").click(function() {
+        mistakesAllowed = 10;
+    })
+
+    $("#medium").click(function() {
+        mistakesAllowed = 8;
+    })
+
+    $("#hard").click(function() {
+        mistakesAllowed = 5;
+    })
 })
+
 
