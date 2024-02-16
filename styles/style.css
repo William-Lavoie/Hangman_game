@@ -122,11 +122,12 @@ p {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    width: 20vw;
     justify-content: center;
 }
 
 #easy, #medium, #hard {
-    width: 150px;
+    width: 100%;
     position: relative;
     right: 50px;
 }
@@ -157,4 +158,48 @@ p {
     color: red;
     text-shadow: white 2px 2px;
 }
+
+@media only screen and (max-width: 600px) {
+
+    #easy, #medium, #hard {
+        width: 150px;
+        position: relative;
+        top: 200px;
+        align-self: center;
+        right: 170px;
+        font-size: 18px;
+    }
+
+    #medium {
+        font-size: 16px;
+    }
+
+    .side-bar {
+        display: none;
+    }
+
+    #new-game {
+        width: 200px;
+        position: relative;
+        left: 40px;
+        bottom: 100px;
+    }
+
+    #container, #letter-containers {
+        width: 300px;
+        position: relative;
+        left: 35px;
+        bottom: 50px;
+    
+    }
+
+    .letter, .wrong-letters {
+        font-size: 28px;
+    }
+
+    #guesses-left {
+        display: none;
+    }
+}
+
 
