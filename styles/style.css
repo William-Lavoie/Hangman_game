@@ -159,6 +159,10 @@ p {
     text-shadow: white 2px 2px;
 }
 
+#mobile-only {
+    display: none;
+}
+
 @media only screen and (max-width: 600px) {
 
     #easy, #medium, #hard {
@@ -199,6 +203,13 @@ p {
 
     #guesses-left {
         display: none;
+    }
+
+    #mobile-only {
+        display: inline;
+        position: relative;
+        right: 300px;
+        top: 200px;
     }
 }
 
