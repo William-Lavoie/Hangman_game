@@ -30,6 +30,8 @@ $(document).ready(function() {
         counter = 0;
         mistakes = 0;
         gameIsOver = false;
+        $("#guesses-left").text(mistakesAllowed - mistakes + " Guesses left");
+
         $("#container").html("");
         $("#pictures").html("");
         $("#letter-containers").html("");
@@ -69,6 +71,7 @@ $(document).ready(function() {
 
                 let wrongLetter = "<div class='wrong-letters'>" + String.fromCharCode(letter+32) + "</div>";
                  $("#letter-containers").append(wrongLetter);
+                 $("#guesses-left").text(mistakesAllowed - mistakes + " Guesses left");
 
                 if (mistakes >= mistakesAllowed) {
                     alert("You lost, the word was : " + wordGame);
@@ -105,14 +108,20 @@ $(document).ready(function() {
 
     $("#easy").click(function() {
         mistakesAllowed = 10;
+        $("#guesses-left").text(mistakesAllowed - mistakes + " Guesses left");
+
     })
 
     $("#medium").click(function() {
         mistakesAllowed = 8;
+        $("#guesses-left").text(mistakesAllowed - mistakes + " Guesses left");
+
     })
 
     $("#hard").click(function() {
         mistakesAllowed = 5;
+        $("#guesses-left").text(mistakesAllowed - mistakes + " Guesses left");
+
     })
 })
 
